@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "../views/LoginView.vue";
-import SignUpView from "../views/SignUpView.vue";
-import FeedView from "../views/FeedView.vue";
-import ProfilView from "../views/ProfilView.vue";
-import ErrorView from "../views/ErrorView.vue"
+import LoginView from "../views/Login.vue";
+import SignUpView from "../views/SignUp.vue";
+import FeedView from "../views/Feed.vue";
+import ProfilView from "../views/Profil.vue";
+import ErrorView from "../views/Error.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

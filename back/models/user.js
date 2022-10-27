@@ -15,4 +15,4 @@ userSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('User', userSchema); 
 
-//See how to add an admin 
+//See how to add an admin ex > isAdmin: { type: Boolean, default: false },
