@@ -8,7 +8,7 @@ exports.signup = (req, res, next) => {
       var role = 'utilisateur';
       if (req.body.email.includes("@admin")) {
         role = 'administrateur';
-      } // admin role for what
+      } 
       const signupUser = new User({
         firstname: req.body.firstname,
         lastname: req.body.lastname,

@@ -8,11 +8,9 @@ const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique: true }, 
     password: { type: String, required: true },
     role: { type: String, required: true }, 
-    avatar: { type: String, required: true }
+    avatar: { type: String, required: true },
 }); 
 
 userSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('User', userSchema); 
-
-//See how to add an admin ex > isAdmin: { type: Boolean, default: false },
