@@ -3,10 +3,7 @@
         <RouterLink to="/feed">
             <img src="../assets/Groupomania-logo.svg" alt="Groupomania-logo" class="header__logo"/>
         </RouterLink>
-        <form method="get" action="ville.php" class="header-form">
-            <fontAwesome icon="search" class="header-form__icon"/>
-            <input type="text" name="search" placeholder="Rechercher sur l'intranet" class="header-form__input"/>
-        </form>
+       
     </div>
     <div class="header-nav">
         <RouterLink to="/feed" class="header-nav-home">
@@ -100,20 +97,8 @@ export default {
 .header__logo{
     width: 60px;
 }
-.header-form__icon{
-    position: relative;
-    color: #4E5166;
-    left: 50px;
-}
-.header-form__input{
-    margin-left: 20px;
-    padding: 10px;
-    padding-left:40px;
-    font-weight: lighter;
-    width: 180px;
-    border-radius: 30px;
-    border: 0.5px solid #4E5166;
-}
+
+
 .header-nav{
     position: relative;
     display: flex;
@@ -189,9 +174,7 @@ export default {
         flex-direction: column;
         justify-content: space-around;
     }
-    .header-form{
-        margin-right:30px
-    }
+  
     .header__logo{
         margin-bottom: 20px;
     }

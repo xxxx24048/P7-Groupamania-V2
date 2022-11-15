@@ -18,7 +18,7 @@ exports.createPost = (req, res, next) => {
       });
   }
   post.save()
-  .then(() => res.status(201).json({ message: "Post saved!" }))
+  .then(() => res.status(201).json({ message: "La publication est enregistrée !" }))
   .catch((error) => res.status(400).json({ error }));
 };
 
@@ -87,7 +87,7 @@ exports.modifyPost = (req, res, next) => {
       .then(() => {
           var imageUrl = post.imageUrl;
           if (postObject.imageUrl != null) { imageUrl = postObject.imageUrl; }
-          res.status(200).json({ message: "Modification(s) registered", imageUrl: imageUrl });
+          res.status(200).json({ message: "Modification(s) effectuée(s)", imageUrl: imageUrl });
       })
       .catch((error) => res.status(400).json({ error }));
       })
@@ -107,7 +107,7 @@ exports.deletePost = (req, res, next) => {
             if (filename != null) { 
               fs.unlink(`images-posts/${filename}`, () => {});
             }
-            res.status(200).json({ message: "Post deleted!" });
+            res.status(200).json({ message: "Publication supprimée !" });
           })
           .catch((error) => res.status(400).json({ error }));
     })
@@ -122,7 +122,7 @@ exports.likedPost = (req, res, next) => {
         { _id: req.params.id },
         { $inc: { likes: 1 }, $push: { usersLiked: req.auth.userId }}
       )
-      .then(() => res.status(200).json({ message: "You liked it!" }))
+      .then(() => res.status(200).json({ message: "J'aime!" }))
       .catch((error) => res.status(400).json({ error }));
     } 
     else {
@@ -130,7 +130,7 @@ exports.likedPost = (req, res, next) => {
       { _id: req.params.id },
       { $inc: { likes: -1 }, $pull: { usersLiked: req.auth.userId } } 
       )
-      .then(() => res.status(200).json({ message: "You not liked it anymore!" }))
+      .then(() => res.status(200).json({ message: "Je n'aime plus." }))
       .catch((error) => res.status(400).json({ error }));
     }
 });
@@ -153,7 +153,7 @@ exports.commentedPost = (req, res, next) => {
       { $inc: { commentNumber: 1 }, 
         $push: { comments: commentObject }}
     )
-    .then(() => res.status(200).json({ message: "Your comment is added!" }))
+    .then(() => res.status(200).json({ message: "Commentaire ajouté" }))
     .catch((error) => res.status(400).json({ error }));
   })
   .catch((error) => res.status(400).json({error: error}));
@@ -167,7 +167,7 @@ exports.deleteComment = (req, res, next) => {
       { $inc: { commentNumber: -1 }, 
         $pull: { comments: { commentId: req.params.idComment }}}
     )
-    .then(() => res.status(200).json({ message: "Your comment is deleted!" }))
+    .then(() => res.status(200).json({ message: "Commentaire supprimé" }))
     .catch((error) => res.status(400).json({ error }));
   })
   .catch((error) => res.status(400).json({error: error}));

@@ -14,10 +14,7 @@
                         <fontAwesome icon="camera" class="create-post-middle-btn__icon"/>
                         <p class="create-post-middle-btn__title">Ajouter une image</p>
                     </div>
-                    <div aria-label="bouton ajouter une vidéo youtube" class="create-post-middle-btn">
-                        <fontAwesome icon="circle-play" class="create-post-middle-btn__icon"/>
-                        <p class="create-post-middle-btn__title">Ajouter une vidéo via Youtube</p>
-                    </div>
+
                     <div v-if="this.inputFile.name != null" class="create-post-middle-file">
                         <fontAwesome @click="delPublicationPic" icon="circle-xmark" class="create-post-middle-btn-file__icon"/>
                         <p class="create-post-middle-file__text">{{ this.inputFile.name }}</p>

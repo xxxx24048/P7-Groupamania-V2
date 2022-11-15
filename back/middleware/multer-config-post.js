@@ -10,11 +10,11 @@ const MIME_TYPES = {
 
 const storage = multer.diskStorage({ 
     destination: (req, file, callback) => { 
-        if (!fs.existsSync('images')) { 
-            fs.mkdirSync('images'); 
-            callback(null, 'images');
+        if (!fs.existsSync('images-posts')) { 
+            fs.mkdirSync('images-posts'); 
+            callback(null, 'images-posts');
         } else { 
-        callback(null, 'images');
+        callback(null, 'images-posts');
         }
     },
     filename: (req, file, callback) => { 

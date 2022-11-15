@@ -14,10 +14,6 @@
                         <fontAwesome icon="camera" class="modify-post-middle-btn__icon"/>
                         <p class="modify-post-middle-btn__title">Modifier l'image</p>
                     </div>
-                    <div aria-label="bouton ajouter une vidéo youtube" class="modify-post-middle-btn">
-                        <fontAwesome icon="circle-play" class="modify-post-middle-btn__icon"/>
-                        <p class="modify-post-middle-btn__title">Modifier la vidéo via Youtube</p>
-                    </div>
                     <div v-if="this.inputFile.name != null" class="modify-post-middle-file">
                         <fontAwesome @click="delModifyPublicationPic" icon="circle-xmark" class="modify-post-middle-btn-file__icon"/>
                         <p class="modify-post-middle-file__text">{{ this.inputFile.name }}</p>
